@@ -9,7 +9,7 @@
 
 ## 2026-04-29
 - [x] Выбрать 1 primary student ICP на 14 дней (экзамен/дедлайн/новая профессия) и сформулировать оффер в 1 строку (student-first) *(done 2026-04-29)*
-- [ ] Определить activation event: что именно считается первой meaningful learning session (логика + событие + метрика)
+- [x] Определить activation event: что именно считается первой meaningful learning session (логика + событие + метрика) *(done 2026-04-29)*
 - [ ] Сформулировать «dosage + progress promise» (D2C аналог outcomes-based): сколько сессий/нед и какой измеримый прогресс обещаем/компенсируем
 - [ ] Набросать прототип сценария «tutor + 2 peers» для 1 темы (дешевый social learning эффект) и решить, что меряем в A/B
 - [ ] Прописать guardrails по unit economics: лимит шагов/токенов/контекста + smart routing моделей по сложности шага
