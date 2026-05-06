@@ -27,3 +27,12 @@
 - [ ] Монетизация (WTP): зафиксировать paywall на 5-й meaningful session и протестировать цену 299 vs 499 ₽ (минимальный copy + кнопка “оплатить”/“позже”)
 - [ ] Learning data moat: определить минимальные 3 поля semantic learning memory, которые обновляются после каждой meaningful session (weakest_topic, misconception_tag, next_topic)
 - [ ] Метрики: завести простой срез D0-D1 Activation Rate и D1/D7 retention по exam_date (есть/нет) и subject
+
+## 2026-05-06
+- [ ] Обновить `strategy/annual-product-strategy.md` под новый wedge: **D2C book-to-habit AI companion** (заменить student/exam как primary), пересобрать NSM/activation/retention под 14-дневный MVP
+- [ ] Выбрать 3 стартовые книги для MVP (например: Atomic Habits, Deep Work, The Subtle Art…) и сделать быстрый старт без upload (книга→цель→Day 1)
+- [ ] Зафиксировать activation event для wedge: `book_habit_day1_completed` и вывести в аналитике D0 start→Day1 completion
+- [ ] Переписать задания Day 1–3 в формате implementation intentions (if-then) + выбор триггера пользователем
+- [ ] Добавить “grace day” (1 пропуск без обнуления streak) для снижения отвалов после первого пропуска
+- [ ] Тест монетизации: paywall/lead-capture после 3 выполненных заданий (варианты 299 ₽ за 30-дневный план vs 699 ₽ за месяц доступа)
+
