@@ -30,7 +30,7 @@
 
 ## 2026-05-06
 - [x] Обновить `strategy/annual-product-strategy.md` под новый wedge: **D2C book-to-habit AI companion** (заменить student/exam как primary), пересобрать NSM/activation/retention под 14-дневный MVP *(done 2026-05-06)*
-- [ ] Выбрать 3 стартовые книги для MVP (например: Atomic Habits, Deep Work, The Subtle Art…) и сделать быстрый старт без upload (книга→цель→Day 1)
+- [x] Выбрать 3 стартовые книги для MVP (например: Atomic Habits, Deep Work, The Subtle Art…) и сделать быстрый старт без upload (книга→цель→Day 1) *(done 2026-05-06)*
 - [ ] Зафиксировать activation event для wedge: `book_habit_day1_completed` и вывести в аналитике D0 start→Day1 completion
 - [ ] Переписать задания Day 1–3 в формате implementation intentions (if-then) + выбор триггера пользователем
 - [ ] Добавить “grace day” (1 пропуск без обнуления streak) для снижения отвалов после первого пропуска
