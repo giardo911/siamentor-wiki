@@ -30,9 +30,13 @@
 
 ## 2026-05-06
 - [x] Обновить `strategy/annual-product-strategy.md` под новый wedge: **D2C book-to-habit AI companion** (заменить student/exam как primary), пересобрать NSM/activation/retention под 14-дневный MVP *(done 2026-05-06)*
-- [x] Выбрать 3 стартовые книги для MVP (например: Atomic Habits, Deep Work, The Subtle Art…) и сделать быстрый старт без upload (книга→цель→Day 1) *(done 2026-05-06)*
+- [x] Выбрать 3 стартовые книги для MVP (Atomic Habits / 7 навыков / 4-часовая рабочая неделя) и сделать быстрый старт без upload (книга→цель→Day 1) *(done 2026-05-06)*
 - [ ] Зафиксировать activation event для wedge: `book_habit_day1_completed` и вывести в аналитике D0 start→Day1 completion
 - [ ] Переписать задания Day 1–3 в формате implementation intentions (if-then) + выбор триггера пользователем
 - [ ] Добавить “grace day” (1 пропуск без обнуления streak) для снижения отвалов после первого пропуска
+- [ ] Streak: добавить micro-reward (минимальная анимация/бейдж) на продление серии, особенно Day 1–7
 - [ ] Тест монетизации: paywall/lead-capture после 3 выполненных заданий (варианты 299 ₽ за 30-дневный план vs 699 ₽ за месяц доступа)
+
+## 2026-05-07
+- [ ] Обновить daily: собрать инсайты по streak/grace day и if-then механикам + связать с метриками MVP
 
