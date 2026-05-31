@@ -49,3 +49,11 @@
 - [ ] Day 1–3 контент (Atomic Habits): выписать 3 задания в формате if-then (≤10 минут) + 3 варианта триггера (время/место/событие) как baseline для генерации
 - [ ] Онбординг: добавить выбор триггера с дефолтом (чтобы не увеличивать drop-off), сохранить как часть плана
 - [ ] Retention после Day 7 (черновик): концепт «Day 8: закрепление внедрения» (1 экран) — inspired by Readwise Mastery daily ritual
+
+## 2026-05-31
+- [ ] Синхронизировать `/data/workspace/4teacher/.planning/PROJECT.md` и `.planning/STATE.md` с Phase 8 Habit Tracker из `.planning/ROADMAP.md` — зачем: убрать конфликт между lesson-illustrations фокусом и book-to-habit MVP; метрика/риск: снижает solo-founder execution risk и риск строить не тот wedge
+- [ ] Создать golden set для генерации Day 1–3 habit actions: 3 книги x 3 дня x 2 пользовательские цели + expected outputs в if-then формате — зачем: зафиксировать качество микро-действий до изменения модели/промптов; метрика/риск: `book_habit_day1_completed`, task_completion_rate, model drift risk
+- [ ] Добавить минимальный eval-скрипт/ручной чеклист для habit action generation rubric: ≤10 минут, один trigger, связь с книгой, конкретный check-in question — зачем: не выпускать generic self-help задания под видом персонализации; метрика/риск: activation rate, D1 return, trust risk
+- [ ] Спроектировать typed habit memory schema для Phase 8 (`goal`, `trigger`, `completed_action`, `friction_tag`, `confidence`) до реализации LLM-персонализации — зачем: memory должна усиливать следующий action, а не накапливать шумный чат; метрика/риск: D7 retention, memory pollution risk, personalization quality
+- [ ] Добавить PostHog events для Phase 8: `habit_action_generated`, `habit_memory_written`, `book_habit_day1_completed`, `daily_habit_checkins_completed`, `habit_paywall_viewed`, `habit_paywall_clicked` — зачем: проверить loop фактами, а не ощущениями; метрика/риск: activation, NSM, paywall CTR, analytics blind spot
+- [ ] Подготовить paywall artifact после 3 completed actions: экран “ты внедрил 3 действия из книги” + оффер 30-дневного плана — зачем: монетизация должна идти после value proof; метрика/риск: paywall CTR, cancellation risk, WTP validation
