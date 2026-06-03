@@ -64,3 +64,10 @@
 - [ ] Сделать paywall progress artifact после 3 completed actions с перечислением X/Y/Z и next 30-day promise — зачем: RevenueCat-сигнал показывает, что ранний churn трудно вернуть; метрика/риск: paywall CTR, trial cancellation, perceived value
 - [ ] Добавить completion-chain dashboard/query: plan created -> Day1 completed -> D1 return -> Day3 completed -> paywall viewed/clicked -> D7 retained — зачем: AI label сам по себе не удерживает, нужен измеримый loop; метрика/риск: retention blind spot, false-positive activation
 - [ ] Привязать golden set к paywall copy: для каждой из 3 книг проверить, что первые 3 actions достаточно конкретны, чтобы стать доказательством прогресса на paywall — зачем: monetization copy должен опираться на реальные completed actions; метрика/риск: WTP validation, low-trust paywall
+
+## 2026-06-03
+- [ ] Добавить к habit memory event ссылку на исходный check-in/evidence snippet рядом с derived fields — зачем: снизить риск ложной персонализации и потери ground truth; метрика/риск: memory accuracy, wrong-next-action risk
+- [ ] Разделить durable memory на append-only события и derived facts с полем `confidence` — зачем: не переписывать профиль пользователя после каждого check-in; метрика/риск: memory drift, faulty update risk, D7 retention
+- [ ] В paywall после 3 completed actions показывать конкретные выполненные действия X/Y/Z и next 30-day promise — зачем: AI subscription retention требует visible recurring value, а не generic AI pitch; метрика/риск: paywall CTR, trial cancellation, WTP validation
+- [ ] Добавить событие `habit_paywall_proof_rendered` с количеством completed actions и book slug — зачем: проверить, что monetization происходит после value proof; метрика/риск: activation-to-paywall chain, low-trust paywall
+- [ ] В golden set пометить каждый generated action как `fact`, `inference` или `unsupported` относительно книги и user goal — зачем: не продавать hallucinated self-help как персонализацию; метрика/риск: trust risk, action quality score
