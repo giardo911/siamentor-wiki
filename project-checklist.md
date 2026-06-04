@@ -71,3 +71,10 @@
 - [ ] В paywall после 3 completed actions показывать конкретные выполненные действия X/Y/Z и next 30-day promise — зачем: AI subscription retention требует visible recurring value, а не generic AI pitch; метрика/риск: paywall CTR, trial cancellation, WTP validation
 - [ ] Добавить событие `habit_paywall_proof_rendered` с количеством completed actions и book slug — зачем: проверить, что monetization происходит после value proof; метрика/риск: activation-to-paywall chain, low-trust paywall
 - [ ] В golden set пометить каждый generated action как `fact`, `inference` или `unsupported` относительно книги и user goal — зачем: не продавать hallucinated self-help как персонализацию; метрика/риск: trust risk, action quality score
+
+## 2026-06-04
+- [ ] Сделать paywall proof renderer, который подставляет 3 completed actions и next 30-day promise вместо generic AI copy — зачем: RevenueCat/consumer AI signals показывают, что retention требует visible recurring value; метрика/риск: `habit_paywall_proof_rendered`, paywall CTR, low-trust paywall
+- [ ] Добавить memory-use eval в golden set: next action должен опираться только на confirmed facts или явно помеченные low-confidence inference — зачем: персональная память без проверки может ухудшить action и доверие; метрика/риск: wrong-next-action rate, memory accuracy, D7 retention
+- [ ] Ввести prompt memory budget для check-in generation: максимум N relevant events/facts + fallback без long context — зачем: persistent companion должен быть экономичным и предсказуемым; метрика/риск: cost per check-in, latency, context pollution
+- [ ] Добавить stable IDs к habit events (`book_slug`, `goal_id`, `trigger_id`, `action_id`, `checkin_id`) — зачем: habit graph должен быть проверяемым и потенциально переносимым, а не чат-логом; метрика/риск: analytics join quality, memory portability, debugging speed
+- [ ] Построить completion-chain query `plan_created -> day1_completed -> d1_return -> day3_completed -> paywall_proof_rendered -> paywall_clicked` — зачем: оптимизировать именно behavior loop до монетизации; метрика/риск: activation-to-paywall conversion, retention blind spot
