@@ -117,6 +117,7 @@
 - [ ] Протестировать mobile-first paywall proof screen после 3 completed actions: evidence cards X/Y/Z + best trigger pattern + 30-day offer — зачем: paywall должен продавать доказанный прогресс, а не generic AI subscription; метрика/риск: `habit_paywall_proof_rendered`, paywall CTR, low-trust paywall
 
 ## 2026-06-11
+- [ ] Спроектировать и проверить mobile-first Day 2–7 memory trust gate: memory evidence line + `верно / исправить / забыть` перед next action — зачем: цепочка книга -> действие -> привычка должна быть персонализированной, но контролируемой; метрика/риск: `habit_memory_corrected`, daily check-in completion, wrong-next-action complaints
 - [ ] Добавить Day 2–7 memory transparency line с действиями `исправить / забыть` — зачем: consumer AI trust сейчас строится вокруг приватной и контролируемой памяти, а не просто "long-term memory"; метрика/риск: `habit_memory_corrected`, trust complaints, wrong-next-action risk
 - [ ] Ввести hard allowlist для `HabitMemoryFact`: `goal`, `trigger`, `completed_action`, `friction`, `confidence`, `source_checkin_id` — зачем: EDPS companion signal показывает, что personalization/memory повышает privacy risk; метрика/риск: `memory_outside_habit_domain`, unsupported-memory-use rate, overgeneralized_memory eval failures
 - [ ] Добавить в golden set failure case `generic_advice_without_trigger` — зачем: AI tutoring тренд уходит в guided workflows, а book-to-habit должен помогать действовать, не пересказывать книгу; метрика/риск: action quality score, D1 return, generic-advice risk
