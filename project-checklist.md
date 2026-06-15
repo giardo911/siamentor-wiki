@@ -164,6 +164,7 @@
 - [ ] Ввести monetization gate `paywall_blocked` до 3 completed actions и `ready_for_proof` после 3 actions — зачем: paywall должен следовать за доказанной цепочкой книга -> действие -> привычка; метрика/риск: early-paywall churn, `habit_paywall_proof_rendered`, paywall CTR
 
 ## 2026-06-15
+- [ ] Протестировать first-session action lock: onboarding не завершается без `book_habit_day1_completed`, а `paywall_blocked` держится до 3 completed actions — зачем: пользователь должен почувствовать цепочку книга -> действие -> привычка до монетизации; метрика/риск: activation rate, D1 return, early-paywall churn
 - [ ] Перестроить first-session flow так, чтобы пользователь завершал `book_habit_day1_completed` до выхода из сессии — зачем: retention benchmark показывает, что Day 7 растет, когда core value action случается сразу; метрика/риск: activation rate, D1 return, plan-created-without-action drop-off
 - [ ] Добавить onboarding boundary promise: "помним только цель, триггер, выполненное действие и препятствие для следующего шага" — зачем: свежий Siri/consumer AI signal усиливает trust через ограниченный personal context; метрика/риск: onboarding conversion, trust complaints, unsupported-memory-use rate
 - [ ] Переписать Day 2-7 check-in как guided action flow: подтвердить прошлый evidence snippet, выбрать `trigger_matched`, выбрать friction и получить следующий if-then шаг — зачем: context-aware AI должен доводить до behavior execution, а не вести generic chat; метрика/риск: `daily_habit_checkins_completed`, action quality score, generic-chat risk
