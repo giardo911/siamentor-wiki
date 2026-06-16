@@ -173,6 +173,7 @@
 - [ ] Проверить marketing copy на companion-category risk: заменить broad/emotional companion формулировки на bounded habit companion — зачем: рынок и регуляторный контекст двигаются к clear boundaries; метрика/риск: low-trust paywall, policy/reputation risk, onboarding clarity
 
 ## 2026-06-16
+- [ ] Проверить единый mobile-first habit surface `book context -> today's action -> memory receipt -> streak/grace -> progress to proof paywall` — зачем: пользователь должен видеть один ежедневный ритуал книга -> действие -> привычка, а не набор разрозненных экранов; метрика/риск: `daily_habit_checkins_completed`, D1/D7 retention, generic-chat risk
 - [ ] Добавить visible memory receipt в Day 2-7: `Помню: <trigger/action/friction>` + `верно / исправить / забыть` — зачем: privacy-first AI все равно может ощущаться creepy без контроля; метрика/риск: `habit_memory_corrected`, trust complaints, wrong-next-action complaints
 - [ ] Свести main habit surface в один экран: today's action, evidence line, streak/grace state и progress to proof paywall — зачем: AI должен быть встроен в выполнение привычки, а не спрятан в отдельный чат; метрика/риск: `daily_habit_checkins_completed`, D1/D7 retention, generic-chat risk
 - [ ] Переписать marketing/paywall copy в формулу bounded habit companion: "7 дней действий из книги + проверяемая память по привычке" — зачем: свежий Siri signal уводит рынок от emotional companion category к utility/trust; метрика/риск: onboarding conversion, low-trust paywall, policy/reputation risk
