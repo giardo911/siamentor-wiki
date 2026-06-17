@@ -186,3 +186,6 @@
 - [ ] Переписать marketing/paywall copy в формулу bounded habit companion: "7 дней действий из книги + проверяемая память по привычке" — зачем: свежий Siri signal уводит рынок от emotional companion category к utility/trust; метрика/риск: onboarding conversion, low-trust paywall, policy/reputation risk
 - [ ] Реализовать monetization guard: `paywall_blocked` до 3 completed actions, затем `habit_paywall_proof_rendered` с X/Y/Z actions и next 30-day promise — зачем: AI apps хуже удерживают подписчиков без видимого recurring value; метрика/риск: paywall CTR, trial cancellation, early-paywall churn
 - [ ] Добавить dashboard-срез `plan_created -> book_habit_day1_completed -> d1_return -> day3_completed -> habit_paywall_proof_rendered -> d7_retained` — зачем: проверять behavior loop фактами, а не количеством созданных планов; метрика/риск: activation-to-paywall conversion, retention blind spot
+
+## 2026-06-17
+- [ ] Протестировать post-action receipt после `Сделал`: book anchor + completed action + bounded memory receipt + progress `1/3` до proof paywall — зачем: выполнение должно явно превращаться в повторяемую привычку до монетизации; метрика/риск: `book_habit_day1_completed`, `habit_memory_corrected`, D1 return, early-paywall churn
