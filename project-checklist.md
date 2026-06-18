@@ -189,3 +189,11 @@
 
 ## 2026-06-17
 - [ ] Протестировать post-action receipt после `Сделал`: book anchor + completed action + bounded memory receipt + progress `1/3` до proof paywall — зачем: выполнение должно явно превращаться в повторяемую привычку до монетизации; метрика/риск: `book_habit_day1_completed`, `habit_memory_corrected`, D1 return, early-paywall churn
+
+## 2026-06-18
+- [ ] Заблокировать завершение первой сессии без `book_habit_day1_completed` или явного "сделаю позже" recovery hook — зачем: свежий Stanford/The 74 сигнал показывает, что доступ к AI tutor сам по себе дает 2-5 минут usage и не создает привычку; метрика/риск: activation rate, plan-created-without-action drop-off, D1 return
+- [ ] Добавить anti-idle Day 2 ritual: evidence receipt прошлого действия + один if-then trigger + микро-действие до 10 минут + check-in question — зачем: book-to-habit companion должен возвращать пользователя к guided practice, а не становиться answer machine; метрика/риск: `daily_habit_checkins_completed`, same-trigger completion, generic-chat risk
+- [ ] В golden set добавить eval `guided_practice_not_answer_machine` — зачем: AI output должен вести к действию из книги, а не к длинному объяснению или совету; метрика/риск: action quality score, unsupported advice rate, D7 retention
+- [ ] Ограничить default actions для adult D2C users до 5-10 минут и обязательного trigger binding — зачем: adult learning constraints требуют small-contextual actions, иначе план конкурирует с рабочим днем; метрика/риск: first-action completion, action-too-large failures, D1 return
+- [ ] Добавить companion-risk eval: no emotional dependency language, no broad personality profiling, no memory outside `goal/trigger/completed_action/friction/confidence/source_checkin_id` — зачем: companion safety/memory signals требуют bounded habit memory; метрика/риск: trust complaints, `memory_outside_habit_domain`, overgeneralized_memory failures
+- [ ] Проверить proof paywall state после третьего completed action: X/Y/Z actions + trigger pattern + friction adjustment + next 30-day promise — зачем: AI apps retention слабее без visible recurring value; метрика/риск: `habit_paywall_proof_rendered`, paywall CTR, trial cancellation
