@@ -1,5 +1,13 @@
 # Project checklist
 
+## 2026-06-22
+- [ ] Добавить `d1_return_from_action_receipt` и `d3_active_checkin_rate` в Phase 8 dashboard — зачем: свежий AI tutoring сигнал показывает, что главная проблема не "умеет ли tutor", а возвращается ли пользователь к практике; метрика/риск: D1/D3 retention, plan-created-without-action drop-off
+- [ ] Закрыть first-session success без Day 1 completion: onboarding должен завершаться только через `book_habit_day1_completed` или явный `do_later_recovery_hook` — зачем: book-to-habit должен сразу превращать книгу в действие, иначе становится answer machine; метрика/риск: activation rate, D1 return, generic-chat risk
+- [ ] Спроектировать Day 2 action-first surface: receipt прошлого действия -> memory receipt -> один if-then trigger -> микро-действие до 10 минут -> check-in — зачем: AI companion value реализуется через повторяемую guided practice, а не через новый совет каждый день; метрика/риск: `daily_habit_checkins_completed`, same-trigger completion, D7 retention
+- [ ] Добавить copy/eval boundary `memory_helps_next_action_only` — зачем: рынок personal AI memory растет, но SiaMentor должен обещать только bounded habit memory, а не широкое профилирование личности; метрика/риск: `memory_outside_habit_domain`, trust complaints, overgeneralized_memory failures
+- [ ] Проверить proof paywall на связку `completed_actions[3] + cautious_trigger_pattern + friction_adjustment + free_continue_available` — зачем: AI apps имеют WTP, но retention gap; paywall должен продавать observable behavior proof без давления; метрика/риск: `habit_paywall_proof_rendered`, paywall CTR, early-paywall churn
+- [ ] Добавить dashboard slice `action_receipt_seen -> next_action_started -> checkin_completed -> proof_paywall_rendered -> free_continue_clicked/trial_started` — зачем: retention и trust ломаются между receipt, действием и monetization, а не только на DAU; метрика/риск: funnel blind spot, trust metric blind spot
+
 
 ## 2026-04-28
 - [x] Определить ICP на ближайшие 30 дней (1 сегмент) и сформулировать оффер в 1 предложение *(done 2026-04-29: primary ICP на 14 дней + оффер)*
