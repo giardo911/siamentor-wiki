@@ -1,6 +1,7 @@
 # Project checklist
 
 ## 2026-06-23
+- [ ] Протестировать state `proof_paywall_with_free_continue`: после 3 completed actions показать proof paywall, paid CTA и бесплатный сегодняшний шаг без потери progress — зачем: monetization должна следовать за доказанной цепочкой книга -> действие -> привычка, но не ломать только что возникший ритм; метрика/риск: `habit_paywall_proof_rendered`, `free_continue_clicked`, `today_action_completed_after_paywall`, early-paywall churn
 - [ ] Зафиксировать `ActivationContract` для Phase 8: `plan_created` не считается успехом без `book_habit_day1_completed` или `do_later_recovery_hook` — зачем: свежие AI tutor исследования показывают, что доступ без использования не дает outcomes; метрика/риск: activation rate, plan-created-without-action drop-off, D1 return
 - [ ] Добавить eval `action_too_large_or_unbound`: fail, если next action больше 10 минут или без конкретного if-then trigger — зачем: adult D2C habit loop должен конкурировать с рабочим днем через маленькое contextual action; метрика/риск: first-action completion, action quality score, D3 active check-in rate
 - [ ] Реализовать `HabitMemoryReceipt` перед Day 2-7 action: `source_checkin_id`, `evidence_snippet`, `confidence`, `верно / исправить / забыть` — зачем: persistent memory становится expectation, но trust требует видимой и исправляемой памяти; метрика/риск: `habit_memory_corrected`, wrong-next-action complaints, `memory_outside_habit_domain`
