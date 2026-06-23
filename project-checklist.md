@@ -1,5 +1,12 @@
 # Project checklist
 
+## 2026-06-23
+- [ ] Зафиксировать `ActivationContract` для Phase 8: `plan_created` не считается успехом без `book_habit_day1_completed` или `do_later_recovery_hook` — зачем: свежие AI tutor исследования показывают, что доступ без использования не дает outcomes; метрика/риск: activation rate, plan-created-without-action drop-off, D1 return
+- [ ] Добавить eval `action_too_large_or_unbound`: fail, если next action больше 10 минут или без конкретного if-then trigger — зачем: adult D2C habit loop должен конкурировать с рабочим днем через маленькое contextual action; метрика/риск: first-action completion, action quality score, D3 active check-in rate
+- [ ] Реализовать `HabitMemoryReceipt` перед Day 2-7 action: `source_checkin_id`, `evidence_snippet`, `confidence`, `верно / исправить / забыть` — зачем: persistent memory становится expectation, но trust требует видимой и исправляемой памяти; метрика/риск: `habit_memory_corrected`, wrong-next-action complaints, `memory_outside_habit_domain`
+- [ ] Описать typed contract `HabitProofPaywall`: `completed_actions[3]`, `best_trigger_pattern`, `friction_adjustment`, `next_30_day_promise`, `free_continue_available` — зачем: AI apps имеют monetization premium, но retention gap; paywall должен продавать доказанную continuity; метрика/риск: `habit_paywall_proof_rendered`, paywall CTR, trial cancellation
+- [ ] Добавить dashboard funnel `plan_created -> book_habit_day1_completed -> d1_return -> day3_completed -> proof_paywall_rendered -> free_continue_clicked/trial_started` — зачем: usage friction и paywall pressure видны только в цепочке событий, а не в DAU; метрика/риск: retention blind spot, early-paywall churn, trust metric blind spot
+
 ## 2026-06-22
 - [ ] Добавить `d1_return_from_action_receipt` и `d3_active_checkin_rate` в Phase 8 dashboard — зачем: свежий AI tutoring сигнал показывает, что главная проблема не "умеет ли tutor", а возвращается ли пользователь к практике; метрика/риск: D1/D3 retention, plan-created-without-action drop-off
 - [ ] Закрыть first-session success без Day 1 completion: onboarding должен завершаться только через `book_habit_day1_completed` или явный `do_later_recovery_hook` — зачем: book-to-habit должен сразу превращать книгу в действие, иначе становится answer machine; метрика/риск: activation rate, D1 return, generic-chat risk
