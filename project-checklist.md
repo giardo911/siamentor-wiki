@@ -1,5 +1,13 @@
 # Project checklist
 
+## 2026-06-25
+- [ ] Добавить dashboard slice `plan_created -> book_habit_day1_completed -> d1_return -> day3_completed -> same_trigger_completed_days/active_days` — зачем: свежие AI tutor usage-сигналы показывают, что доступ и минуты не равны прогрессу; метрика/риск: activation truth, false-positive engagement, D7 retention
+- [ ] Закрыть Day 1 без completed action только через явный `do_later_recovery_hook` — зачем: first session должна доказать переход книга -> действие, иначе продукт остается планировщиком/answer machine; метрика/риск: `book_habit_day1_completed`, plan-created-without-action drop-off, D1 return
+- [ ] Зафиксировать typed `HabitMemoryReceipt`: `source_checkin_id`, `evidence_snippet`, `confidence`, `верно / исправить / забыть` — зачем: EDPS companion/privacy сигнал требует контролируемой personalization вместо скрытого профилирования; метрика/риск: `habit_memory_corrected`, `memory_outside_habit_domain`, wrong-next-action complaints
+- [ ] Зафиксировать typed `ProofPaywallReceipt`: `completed_actions[3]`, cautious `best_trigger_pattern`, `friction_adjustment`, `next_30_day_promise`, `free_continue_available` — зачем: RevenueCat показывает AI retention gap, поэтому paywall должен продавать observable progress и не ломать habit loop; метрика/риск: `habit_paywall_proof_rendered`, `free_continue_clicked`, trial cancellation
+- [ ] Провести copy safety pass: убрать обещания emotional attachment, deep personality knowledge и broad life profiling из onboarding/paywall — зачем: Guardian backlash показывает, что companion framing быстро становится trust/reputation риском; метрика/риск: trust complaints, low-trust paywall, policy/reputation risk
+- [ ] Добавить eval `answer_machine_without_practice` в golden set Day 1-3 — зачем: Stanford/Chalkbeat/The 74 сигнал показывает, что unguided AI tutor не удерживает usage; метрика/риск: action quality score, unsupported advice rate, D3/D7 retention
+
 ## 2026-06-24
 - [ ] Добавить copy/eval boundary `utility_companion_not_emotional_attachment` для onboarding, Day 2-7 и paywall — зачем: свежий Guardian сигнал показывает backlash вокруг AI learning tools из-за cognitive offloading и emotional attachment; метрика/риск: trust complaints, low-trust paywall, policy/reputation risk
 - [ ] Зафиксировать first-session hard path `book anchor -> if-then trigger -> micro-action -> receipt`, где `plan_created` не завершает activation — зачем: Stanford/Chalkbeat сигнал показывает, что доступ к AI tutor без guided usage быстро превращается в неиспользуемый продукт; метрика/риск: `book_habit_day1_completed`, plan-created-without-action drop-off, D1 return
