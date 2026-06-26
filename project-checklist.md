@@ -1,5 +1,13 @@
 # Project checklist
 
+## 2026-06-26
+- [ ] Зафиксировать `ActivationContract`: `plan_created` = pre-activation, `book_habit_day1_completed` = activation, `do_later_recovery_hook` = допустимое незавершение — зачем: свежий Atlantic/Chalkbeat сигнал показывает motivation gap у AI tutors; метрика/риск: plan-created-without-action drop-off, D1 return, false activation
+- [ ] Протестировать Day 1 hard path `book insight -> if-then trigger -> micro-action 5-10 min -> receipt` без open-ended chat exit — зачем: SiaMentor должен переводить книгу в действие до того, как пользователь уйдет; метрика/риск: `book_habit_day1_completed`, action quality score, answer-machine risk
+- [ ] Реализовать allowlist для `HabitMemoryReceipt`: `source_checkin_id`, `evidence_snippet`, `confidence`, `goal`, `trigger`, `completed_action`, `friction`, correction actions — зачем: EDPS companion signal требует контролируемой personalization; метрика/риск: `memory_outside_habit_domain`, `habit_memory_corrected`, trust complaints
+- [ ] Добавить proof paywall метрики `free_continue_clicked`, `next_action_completed_after_free_continue`, `trial_started_after_proof` — зачем: RevenueCat AI retention gap означает, что paywall не должен ломать только что возникший habit loop; метрика/риск: early-paywall churn, trial cancellation, D7 retention
+- [ ] Разделить dashboard cohorts `plan_created_without_action` vs `book_habit_day1_completed` и сравнить D1/D7 retention — зачем: first-session action важнее общего onboarding completion; метрика/риск: activation truth, retention blind spot, misleading DAU
+- [ ] Добавить eval `motivation_gap_unhandled`: fail, если ответ дает длинный план/совет, но не приводит к одному сегодняшнему действию с trigger и check-in question — зачем: AI companion должен закрывать переход к практике, а не только объяснять книгу; метрика/риск: unsupported advice rate, `daily_habit_checkins_completed`, D3 active check-in rate
+
 ## 2026-06-25
 - [ ] Добавить dashboard slice `plan_created -> book_habit_day1_completed -> d1_return -> day3_completed -> same_trigger_completed_days/active_days` — зачем: свежие AI tutor usage-сигналы показывают, что доступ и минуты не равны прогрессу; метрика/риск: activation truth, false-positive engagement, D7 retention
 - [ ] Закрыть Day 1 без completed action только через явный `do_later_recovery_hook` — зачем: first session должна доказать переход книга -> действие, иначе продукт остается планировщиком/answer machine; метрика/риск: `book_habit_day1_completed`, plan-created-without-action drop-off, D1 return
