@@ -267,3 +267,6 @@
 
 ## 2026-06-25
 - [ ] Проверить free continue после proof paywall как не-блокирующий continuation state: paid CTA + бесплатное действие 5-10 минут + сохранение progress — зачем: монетизация должна появляться после доказанной цепочки книга -> действие -> привычка, но не превращать третий completed action в churn point; метрика/риск: `free_continue_clicked`, `next_action_completed_after_free_continue`, early-paywall churn, D7 retention
+
+## 2026-06-26
+- [ ] Протестировать состояние `next_action_after_free_continue`: после proof paywall пользователь выбирает бесплатное продолжение, получает действие 5-10 минут из той же книги, progress receipt сохраняется — зачем: paywall после 3 completed actions должен монетизировать доказанную цепочку книга -> действие -> привычка, не ломая ежедневный loop; метрика/риск: `free_continue_clicked`, `free_action_completed_after_paywall`, early-paywall churn, D7 retention
