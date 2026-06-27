@@ -278,3 +278,6 @@
 
 ## 2026-06-26
 - [ ] Протестировать состояние `next_action_after_free_continue`: после proof paywall пользователь выбирает бесплатное продолжение, получает действие 5-10 минут из той же книги, progress receipt сохраняется — зачем: paywall после 3 completed actions должен монетизировать доказанную цепочку книга -> действие -> привычка, не ломая ежедневный loop; метрика/риск: `free_continue_clicked`, `free_action_completed_after_paywall`, early-paywall churn, D7 retention
+
+## 2026-06-27
+- [ ] Проверить состояние `proof_paywall_with_today_action`: после третьего completed action показать proof receipt, paid 30-day CTA и видимое бесплатное действие на сегодня — зачем: paywall должен монетизировать доказанную цепочку книга -> действие -> привычка, не превращая третий успех в churn point; метрика/риск: `habit_paywall_proof_rendered`, `free_continue_clicked`, `free_action_completed_after_paywall`, D7 retention
