@@ -1,5 +1,13 @@
 # Project checklist
 
+## 2026-06-27
+- [ ] Добавить Phase 8 metric `minutes_to_first_action_completed` и alert на `plan_created_without_action > 35%` — зачем: Stanford/SCALE показывает, что access к AI tutor не равен meaningful usage; метрика/риск: activation truth, motivation gap, false-positive onboarding
+- [ ] Ввести eval `access_without_usage`: fail, если пользователь получил план/совет, но flow не довел до `book_habit_day1_completed` или `do_later_recovery_hook` — зачем: SiaMentor должен закрывать переход книга -> действие, а не просто выдавать AI output; метрика/риск: `book_habit_day1_completed`, D1 return, answer-machine risk
+- [ ] Спроектировать Day 2 return surface от receipt: "вчера ты сделал X в trigger Y" -> memory receipt -> одно действие 5-10 минут — зачем: повторный вход должен опираться на доказанное действие, а не на абстрактный 7-day plan; метрика/риск: `d1_return_from_action_receipt`, `daily_habit_checkins_completed`, wrong-next-action complaints
+- [ ] Добавить dashboard chain `plan_created -> day1_completed -> d1_return_from_action_receipt -> day3_active_checkin_rate -> proof_paywall_rendered -> free_continue_clicked/trial_started` — зачем: AI subscription retention gap требует видеть, где ломается habit loop до и после paywall; метрика/риск: retention blind spot, early-paywall churn, misleading conversion
+- [ ] Протестировать post-paywall continuation: бесплатный next action после proof paywall должен сохранять receipt, streak/grace state и путь к later paid conversion — зачем: paywall после 3 actions должен монетизировать proof, но не превращаться в quit moment; метрика/риск: `free_action_completed_after_paywall`, `trial_started_after_proof`, D7 retention
+- [ ] Провести copy pass `utility_first_habit_companion`: убрать формулировки broad emotional companion и "глубоко знаю тебя", оставить "память помогает следующему действию из книги" — зачем: companion/privacy risk делает broad memory framing уязвимым; метрика/риск: trust complaints, `memory_outside_habit_domain`, low-trust paywall
+
 ## 2026-06-26
 - [ ] Зафиксировать `ActivationContract`: `plan_created` = pre-activation, `book_habit_day1_completed` = activation, `do_later_recovery_hook` = допустимое незавершение — зачем: свежий Atlantic/Chalkbeat сигнал показывает motivation gap у AI tutors; метрика/риск: plan-created-without-action drop-off, D1 return, false activation
 - [ ] Протестировать Day 1 hard path `book insight -> if-then trigger -> micro-action 5-10 min -> receipt` без open-ended chat exit — зачем: SiaMentor должен переводить книгу в действие до того, как пользователь уйдет; метрика/риск: `book_habit_day1_completed`, action quality score, answer-machine risk
