@@ -281,3 +281,10 @@
 
 ## 2026-06-27
 - [ ] Проверить состояние `proof_paywall_with_today_action`: после третьего completed action показать proof receipt, paid 30-day CTA и видимое бесплатное действие на сегодня — зачем: paywall должен монетизировать доказанную цепочку книга -> действие -> привычка, не превращая третий успех в churn point; метрика/риск: `habit_paywall_proof_rendered`, `free_continue_clicked`, `free_action_completed_after_paywall`, D7 retention
+
+## 2026-06-28
+- [ ] Добавить fail state `plan_created_without_day1_action` в habit eval/golden set — зачем: свежие AI tutor данные показывают, что access и план не равны meaningful use; метрика/риск: activation inflation, `minutes_to_first_action_completed`, D1 return
+- [ ] Протестировать Day 2 return screen от receipt, а не от abstract plan: показать вчерашнее действие, trigger, friction и next 5-10 minute step — зачем: book-to-habit loop должен возвращать пользователя к уже начатой цепочке, а не к пересказу книги; метрика/риск: `d1_return_from_action_receipt`, `daily_habit_checkins_completed`, wrong-next-action complaints
+- [ ] Переписать memory copy boundary на utility-first формулу: "помню вчерашний шаг/препятствие" вместо emotional companion language — зачем: companion privacy/safety контекст повышает цену широкой персонализации; метрика/риск: trust complaints, `memory_outside_habit_domain`, low-trust paywall
+- [ ] Проверить proof paywall continuation после бесплатного действия: receipt + paid CTA + free action completion сохраняют progress chain — зачем: AI apps имеют retention gap, поэтому paywall не должен превращать третий успех в churn point; метрика/риск: `free_continue_clicked`, `free_action_completed_after_paywall`, trial cancellation, D7 retention
+- [ ] Добавить early recovery instrumentation `hours_since_missed_checkin` и `habit_restart_after_gap_completed` в Phase 8 dashboard — зачем: окно возврата после пропуска быстро закрывается, а grace day должен спасать habit loop до отказа пользователя; метрика/риск: return-after-gap conversion, streak-break churn, D7 retention
