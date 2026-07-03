@@ -341,3 +341,6 @@
 
 ## 2026-07-02
 - [ ] Протестировать состояние `book_focus_locked`: после выбора книги пользователь фиксирует один тезис `идея -> поведение`, затем получает первое действие <=10 минут и progress `0/3` — зачем: book-to-habit loop должен начинаться с применимого фокуса, а не с широкого плана; метрика/риск: `book_focus_locked`, `book_habit_day1_completed`, activation inflation, generic-plan risk
+
+## 2026-07-03
+- [ ] Протестировать состояние `first_action_checkin`: после `Сделал` показать receipt книги, тезиса, выполненного действия, trigger и progress `1/3`, затем закрыть сессию без generic chat — зачем: первое действие должно превращаться в начало привычки и доказательство для будущего paywall; метрика/риск: `book_habit_day1_completed`, D1 return, `plan_created_without_day1_action`, early-paywall churn
