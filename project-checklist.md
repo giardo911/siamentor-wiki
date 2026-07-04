@@ -344,3 +344,9 @@
 
 ## 2026-07-03
 - [ ] Протестировать состояние `first_action_checkin`: после `Сделал` показать receipt книги, тезиса, выполненного действия, trigger и progress `1/3`, затем закрыть сессию без generic chat — зачем: первое действие должно превращаться в начало привычки и доказательство для будущего paywall; метрика/риск: `book_habit_day1_completed`, D1 return, `plan_created_without_day1_action`, early-paywall churn
+
+## 2026-07-04
+- [ ] Ввести `habit_outcome_memory` только после completed/recovered action: `completed_action`, `trigger`, `friction`, `next_adjustment`, `source_checkin_id`, `confidence` — зачем: свежий continual-learning signal поддерживает structured outcomes вместо broad companion memory; метрика/риск: `habit_memory_written_after_action`, `memory_outside_habit_domain`, wrong-next-action complaints
+- [ ] Протестировать `two_day_reanchor_needed`: после двух missed check-ins уменьшить действие до <=5 минут, задать один friction-вопрос и переписать if-then trigger — зачем: повторный пропуск чаще означает плохой habit design, а не нехватку мотивации; метрика/риск: `two_day_reanchor_shown`, `habit_restart_after_gap_completed`, notification fatigue, D7 retention
+- [ ] Сделать proof paywall non-blocking continuation: после 3 completed actions показать paid CTA и одновременно оставить бесплатное действие на сегодня с receipt/progress — зачем: AI subscription retention gap делает paywall quit-risk, если он ломает habit loop; метрика/риск: `habit_paywall_proof_rendered`, `free_continue_clicked`, `free_action_completed_after_paywall`, trial cancellation
+- [ ] Добавить copy boundary в memory receipt: "помню только действия из этой привычки" + `верно / исправить / забыть` — зачем: privacy/profiling pressure вокруг consumer AI усиливает ценность контролируемой памяти; метрика/риск: `habit_memory_corrected`, `memory_deleted_by_user`, trust complaints, low-trust paywall
