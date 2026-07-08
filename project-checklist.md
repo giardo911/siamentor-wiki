@@ -1,5 +1,11 @@
 # Project checklist
 
+## 2026-07-08
+- [ ] Реализовать `two_day_reanchor_contract`: после двух missed check-ins показать last verified receipt, один friction-вопрос, действие <=5 минут и переписанный if-then trigger — зачем: повторный пропуск чаще означает плохой habit design, а не слабую мотивацию; метрика/риск: `two_day_reanchor_shown`, `reanchor_action_completed`, D7 retention, notification fatigue
+- [ ] Добавить copy regression check `bounded_companion_language`: запретить broad/emotional AI companion claims без utility boundary "помню только действия из этой привычки" — зачем: regulatory/privacy фон вокруг AI chatbots и companions повышает цену ambiguous intimacy positioning; метрика/риск: trust complaints, policy/reputation risk, low-trust paywall
+- [ ] Добавить cost guardrail `habit_loop_compute_per_completed_action`: считать LLM calls/cost на completed action и использовать structured fallback для Day 2-7, когда verified memory достаточна — зачем: AI subscription economics зависят от variable compute burn, а SiaMentor должен доказывать habit value дешевым bounded loop; метрика/риск: gross margin per paid habit user, slow check-in latency, open-ended chat cost
+- [ ] Обновить post-paywall dashboard cohort: `habit_paywall_proof_rendered -> free_continue_clicked -> free_action_completed_after_paywall -> d7_retained -> trial_started` — зачем: AI apps имеют retention gap, поэтому trial start без продолжения привычки может быть vanity metric; метрика/риск: early-paywall churn, paid curiosity without habit, D7 retained after paywall
+
 ## 2026-07-06
 - [ ] Добавить acceptance test `day2_action_depends_on_day1_receipt`: Day 2 next action обязан использовать Day 1 completed action, friction и trigger, а не генерировать новый generic plan — зачем: свежий AI tutor/agent signal поддерживает curriculum/practice loop, где агент адаптирует следующее задание; метрика/риск: `d2_return_from_action_receipt`, action quality score, generic-plan risk
 - [ ] Провести copy pass `bounded_habit_companion_only` по onboarding, paywall и memory receipt: заменить broad intimacy/companion claims на "7 дней внедряю идеи книги в действия" — зачем: companion market растет в сторону simulated intimacy, а SiaMentor нужен utility/trust wedge; метрика/риск: trust complaints, low-trust paywall, policy/reputation risk
