@@ -388,3 +388,4 @@
 
 ## 2026-07-08
 - [ ] Протестировать proof paywall evidence copy: 3 completed actions + verified receipts + обещание 30-day continuation + free action на сегодня — зачем: paywall должен продавать доказанную цепочку книга -> действие -> привычка, а не абстрактный AI-доступ; метрика/риск: `habit_paywall_proof_rendered`, `trial_started`, `free_continue_clicked`, `paywall_dismissed_no_action`
+  - partial 2026-07-08: зафиксирован acceptance contract `proof_paywall_evidence_copy` в `design/2026-07-08.md`; продуктовый Playwright-тест не добавлялся, потому что `/data/workspace/4teacher` уже был dirty в e2e/test-results до cron-run. Next: перенести contract в targeted Playwright spec и только после зеленого теста закрыть пункт.
