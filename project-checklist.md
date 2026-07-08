@@ -1,5 +1,8 @@
 # Project checklist
 
+## Execution rules
+- [x] Playwright checks are mandatory for UI/e2e changes: run the relevant targeted test plus the full feasible Playwright suite before marking the task done; any failing Playwright test is a blocker, not a warning *(added 2026-07-07 after next_action_uses_verified_memory follow-up)*
+
 ## 2026-07-08
 - [ ] Реализовать `two_day_reanchor_contract`: после двух missed check-ins показать last verified receipt, один friction-вопрос, действие <=5 минут и переписанный if-then trigger — зачем: повторный пропуск чаще означает плохой habit design, а не слабую мотивацию; метрика/риск: `two_day_reanchor_shown`, `reanchor_action_completed`, D7 retention, notification fatigue
 - [ ] Добавить copy regression check `bounded_companion_language`: запретить broad/emotional AI companion claims без utility boundary "помню только действия из этой привычки" — зачем: regulatory/privacy фон вокруг AI chatbots и companions повышает цену ambiguous intimacy positioning; метрика/риск: trust complaints, policy/reputation risk, low-trust paywall
@@ -382,3 +385,6 @@
 - [ ] Закрепить `two_day_reanchor_contract`: после двух missed check-ins показать last receipt, один friction-вопрос, действие <=5 минут и переписанный if-then trigger — зачем: повторный пропуск чаще означает плохой habit design, а не слабую мотивацию; метрика/риск: `two_day_reanchor_shown`, `reanchor_action_completed`, notification fatigue, D7 retention
 - [ ] Добавить copy regression check `bounded_companion_language`: запретить broad/emotional claims вроде "глубоко понимаю тебя" без utility boundary — зачем: свежий risk-based AI regulation signal повышает цену ambiguous companion positioning; метрика/риск: trust complaints, policy/reputation risk, low-trust paywall
 - [ ] Протестировать состояние `verified_memory_next_action`: после подтверждения или исправления Day 2-7 receipt следующий шаг явно показывает bridge книга -> вчерашнее действие -> trigger/friction -> today's action <=10 минут — зачем: memory должна менять поведение, а не быть декоративным профилем перед paywall; метрика/риск: `next_action_from_verified_memory`, `too_hard_action_shrink`, wrong-next-action complaints, D7 retention
+
+## 2026-07-08
+- [ ] Протестировать proof paywall evidence copy: 3 completed actions + verified receipts + обещание 30-day continuation + free action на сегодня — зачем: paywall должен продавать доказанную цепочку книга -> действие -> привычка, а не абстрактный AI-доступ; метрика/риск: `habit_paywall_proof_rendered`, `trial_started`, `free_continue_clicked`, `paywall_dismissed_no_action`
