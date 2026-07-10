@@ -66,17 +66,37 @@ Unit economics dashboard должен показывать эту воронку
 
 ## July execution plan
 
+### 2026-07-10 operating correction
+
+После ревью статуса цель на ближайший спринт меняется с "добавить ещё guardrail" на "получить правду о платной воронке".
+
+Текущая оценка:
+
+- Product loop: 6/10 — hard activation, memory receipt, reanchor и proof paywall уже двигают пользователя к действию.
+- Monetization loop: 3/10 — есть proof paywall surface, но нет production payment/price-test loop.
+- Unit economics: 2/10 — нет живого P&L dashboard и AI cost per completed action.
+- Strategic focus: 7/10 — paid wedge узкий и правильный, но требует рыночного давления через продажи.
+
+Новый порядок работы:
+
+1. Dashboard first: собрать живой weekly CEO view по цепочке `onboarding_started -> book_habit_day1_completed -> third_action_completed -> habit_paywall_proof_rendered -> free_continue_clicked/trial_started -> paid_30_day_plan_started`, с разрезом по source/book/price.
+2. Payment second: подключить реальный 30-day offer и price test 499 / 999 / 1490 RUB; `paid_30_day_plan_started` должен означать платёж или подтверждённый paid commitment, а не просто click.
+3. Sales third: провести 20 ручных продаж/интервью по офферу "7 дней внедряю книгу в действия"; каждое интервью должно закончиться одной из меток: paid, strong intent, first-action start, отказ с причиной.
+4. Cost guardrail fourth: считать `llm_calls_per_completed_action` и `llm_cost_per_completed_action`; Day 2-7 должен быть template-first, а LLM — только для shrink/clarify/rewrite fallback.
+
+Non-goal на этот спринт: не брать новые companion/memory/recovery guardrails, если они не нужны для dashboard, payment, sales или AI-cost truth.
+
 ### Product
 
-1. Сделать hard activation gate production-ready: onboarding success только после `book_habit_day1_completed` или явного `do_later_recovery_hook`.
-2. Запустить proof paywall после 3 completed actions: completed actions X/Y/Z, cautious trigger pattern, friction adjustment, 30-day offer.
-3. Добавить free continuation guardrail после paywall, чтобы монетизация не ломала habit loop.
+1. Сохранить hard activation gate: onboarding success только после `book_habit_day1_completed` или явного `do_later_recovery_hook`.
+2. Довести proof paywall до payment-ready offer: completed actions X/Y/Z, cautious trigger pattern, friction adjustment, 30-day offer, selected price point.
+3. Сохранить free continuation после paywall, чтобы монетизация не ломала habit loop и показывала retention после отказа платить.
 
 ### Analytics
 
-1. Собрать event chain от source до paid.
+1. Собрать event chain от source до paid и weekly snapshot.
 2. Разделить cohorts `plan_created_without_action` и `book_habit_day1_completed`.
-3. Считать AI cost per activated user и AI cost per paid user.
+3. Считать AI cost per completed action, activated user и paid user.
 4. Каждую неделю фиксировать funnel, revenue, cost, decision.
 
 ### GTM
@@ -91,6 +111,7 @@ Unit economics dashboard должен показывать эту воронку
 - 10+ onboarding starts
 - 3+ пользователей с first action
 - 1+ paid commitment или понятная причина отказа платить
+- список отказов по категориям: не верю в результат, не хочу платить за AI, не дошёл до действия, цена, не тот канал/ICP
 
 ## Weekly CEO review
 
