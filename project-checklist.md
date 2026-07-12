@@ -420,3 +420,6 @@
 
 ## 2026-07-11
 - [x] Перенести design contract `post_paywall_habit_health` в dashboard spec: показать цепочку `habit_paywall_proof_rendered -> free_continue_clicked -> free_action_completed_after_paywall -> d7_retained -> trial_started -> trial_cancelled` и cost-пару `llm_calls_per_completed_action` / `llm_cost_per_completed_action` — зачем: paywall должен сохранять цепочку книга -> действие -> привычка и не скрывать рост LLM-cost за trial starts; метрика/риск: early-paywall churn, paid curiosity without habit, gross-margin blind spot *(done 2026-07-11: добавлен typed contract `PostPaywallHabitHealthDashboard` и compile-time dashboard spec в `@siamentor/types`, фиксирующий post-paywall funnel, D7 retention, trial cancellation и LLM cost-per-action поля; product commit d056612)*
+
+## 2026-07-12
+- [ ] Перенести design contract `offline_verified_memory_action` в acceptance spec: при offline/LLM timeout и verified memory показать локальный action <=5 минут, pending-sync receipt и progress без generic error — зачем: daily habit loop должен продолжаться из книги и verified receipt даже без сети, не увеличивая LLM-cost; метрика/риск: `offline_habit_action_shown`, `offline_action_completed_pending_sync`, `offline_completion_synced`, `llm_calls_per_completed_action`, D7 retention
